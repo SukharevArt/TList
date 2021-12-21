@@ -38,6 +38,12 @@ public:
 		}
 	}
 	TQueueList& operator=(const TQueueList& a) {
+		TQNode<T>* e;
+		while (pFirst != nullptr) {
+			e = pFirst;
+			pFirst = pFirst->pNext;
+			delete e;
+		}
 		pFirst = nullptr;
 		pLast = nullptr;
 		TQNode<T>* newNode;

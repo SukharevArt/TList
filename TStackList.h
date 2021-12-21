@@ -38,7 +38,12 @@ public:
 		}
 	}
 	TStackList& operator=(const TStackList& a) {
-		pFirst = nullptr;
+		TSNode<T>* e;
+		while (pFirst != nullptr) {
+			e = pFirst;
+			pFirst = pFirst->pNext;
+			delete e;
+		}
 		TSNode<T>* newNode;
 		TSNode<T>* anode = a.pFirst;
 		if (anode != nullptr) {

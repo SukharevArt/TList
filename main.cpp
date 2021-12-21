@@ -42,7 +42,7 @@ int main() {
 	while (!s.full()) {
 		s.push(a++);
 	}
-	free(p);
+	delete[] p;
 	cout << a << "\n";
 	
 	return 0;
